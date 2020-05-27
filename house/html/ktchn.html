@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дипломная работа: панель управления облаком Rightech</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/btn.css">
+</head>
+
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<script src="../js/ktchn.js"></script>
+
+<body>
+    <div class="ktchn-panel">
+        <form id="panel-form" method="POST" action="/ktchn-send">
+            <label for="light-name">Яркость света</label>
+            <input type="range" id="r1" oninput="fun1()">
+            <input type="text" id="light" name="ktchn-light" value="">
+            <input type="submit" class='btn' value="Отправить">
+        </form>
+        <input class="btn" name="ktchn-fan-on" id="ktchn-fan-on" value="Включить вытяжку" type="submit" />
+        <script>
+            $('#ktchn-fan-on').click(function() {
+                $.post('/ktchn-fan-on')
+            });
+        </script>
+
+        <input class="btn" name="ktchn-fan-off" id="ktchn-fan-off" value="Выключить вытяжку" type="submit" />
+        <script>
+            $('#ktchn-fan-off').click(function() {
+                $.post('/ktchn-fan-off')
+            });
+        </script>
+
+        <input class="btn" name="ktchn-cooker-on" id="ktchn-cooker-on" value="Включить мультиварку" type="submit" />
+        <script>
+            $('#ktchn-cooker-on').click(function() {
+                $.post('/ktchn-cooker-on')
+            });
+        </script>
+
+        <input class="btn" name="ktchn-cooker-off" id="ktchn-cooker-off" value="Выключить мультиварку" type="submit" />
+        <script>
+            $('#ktchn-cooker-off').click(function() {
+                $.post('/ktchn-cooker-off')
+            });
+        </script>
+
+        <form id='main-go' method="POST" action="/main-go">
+            <input type="submit" class='btn' value="На главную" />
+        </form>
+    </div>
+</body>
+
+</html>

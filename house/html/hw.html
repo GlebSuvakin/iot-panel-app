@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дипломная работа: панель управления облаком Rightech</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/btn.css">
+</head>
+
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<script src="../js/hw.js"></script>
+
+<body>
+    <div class="hw-panel">
+        <form id="panel-form" method="POST" action="/hw-send">
+            <label for="light-name">Яркость света</label>
+            <input type="range" id="r1" oninput="fun1()">
+            <input type="text" id="light" name="hw-light" value="">
+            <input type="range" id="r2" oninput="fun2()">
+            <label for="temp-name">Температура</label>
+            <input type="text" id="temp" name="hw-temp" value="">
+            <input type="submit" class='btn' value="Отправить">
+        </form>
+        <input class="btn" name="hw-door-lock-on" id="hw-door-lock-on" value="Закрыть дверь" type="submit" />
+        <script>
+            $('#hw-door-lock-on').click(function() {
+                $.post('/hw-door-lock-on')
+            });
+        </script>
+        <input class="btn" name="hw-door-lock-off" id="hw-door-lock-off" value="Открыть дверь" type="submit" />
+        <script>
+            $('#hw-door-lock-off').click(function() {
+                $.post('/hw-door-lock-off')
+            });
+        </script>
+        <input class="btn" name="hw-security-on" id="hw-security-on" value="Включить сигнализацию в корридоре" type="submit" />
+        <script>
+            $('#hw-security-on').click(function() {
+                $.post('/hw-security-on')
+            });
+        </script>
+        <input class="btn" name="hw-security-off" id="hw-security-off" value="Выключить сигнализацию в корридоре" type="submit" />
+        <script>
+            $('#hw-security-off').click(function() {
+                $.post('/hw-security-off')
+            });
+        </script>
+
+        <form id='main-go' method="POST" action="/main-go">
+            <input type="submit" class='btn' value="На главную" />
+        </form>
+    </div>
+</body>
+
+</html>

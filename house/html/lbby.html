@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дипломная работа: панель управления облаком Rightech</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/btn.css">
+</head>
+
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<script src="../js/lbby.js"></script>
+
+<body>
+    <div class="lbby-panel">
+        <form id="panel-form" method="POST" action="/lbby-send">
+            <label for="light-name">Яркость света</label>
+            <input type="range" id="r1" oninput="fun1()">
+            <input type="text" id="light" name="lbby-light" value="">
+            <label for="temp-name">Температура</label>
+            <input type="range" id="r2" oninput="fun2()">
+            <input type="text" id="temp" name="lbby-temp" value="">
+            <label for="media-name">Громкость мультимедии</label>
+            <input type="range" id="r3" oninput="fun3()">
+            <input type="text" id="media" name="lbby-media" value="">
+            <input type="submit" class='btn' value="Отправить">
+        </form>
+
+        <input class="btn" name="lbby-security-on" id="lbby-security-on" value="Включить сигнализацию в гостинной" type="submit" />
+        <script>
+            $('#lbby-security-on').click(function() {
+                $.post('/lbby-security-on')
+            });
+        </script>
+        <input class="btn" name="lbby-security-off" id="lbby-security-off" value="Выключить сигнализацию в гостинной" type="submit" />
+        <script>
+            $('#lbby-security-off').click(function() {
+                $.post('/lbby-security-off')
+            });
+        </script>
+
+        <input class="btn" name="lbby-window-open" id="lbby-window-open" value="Открыть шторы в гостинной" type="submit" />
+        <script>
+            $('#lbby-window-open').click(function() {
+                $.post('/lbby-window-open')
+            });
+        </script>
+        <input class="btn" name="lbby-window-close" id="lbby-window-close" value="Закрыть шторы в гостинной" type="submit" />
+        <script>
+            $('#lbby-window-close').click(function() {
+                $.post('/lbby-window-close')
+            });
+        </script>
+
+        <form id='main-go' method="POST" action="/main-go">
+            <input type="submit" class='btn' value="На главную" />
+        </form>
+    </div>
+</body>
+
+</html>

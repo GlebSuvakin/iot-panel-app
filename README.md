@@ -1,1 +1,1 @@
-# iot-panel-app
+# vkr-iot-panel

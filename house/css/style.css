@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+}
+
+input[type="text"] {
+    width: 40px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-panel,
+.hw-panel,
+.lbby-panel,
+.bdrm-panel,
+.bthrm-panel,
+.ktchn-panel {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #3b444b;
+    color: white;
+}

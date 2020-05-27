@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дипломная работа: панель управления облаком Rightech</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/btn.css">
+</head>
+
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<script src="../js/bdrm.js"></script>
+
+<body>
+    <div class="bdrm-panel">
+        <form id="panel-form" method="POST" action="/bdrm-send">
+            <label for="light-name">Яркость света</label>
+            <input type="range" id="r1" oninput="fun1()">
+            <input type="text" id="light" name="bdrm-light" value="">
+            <label for="temp-name">Температура</label>
+            <input type="range" id="r2" oninput="fun2()">
+            <input type="text" id="temp" name="bdrm-temp" value="">
+            <input type="submit" class='btn' value="Отправить">
+        </form>
+
+        <input class="btn" name="bdroom-security-on" id="bdroom-security-on" value="Включить сигнализацию в спальне" type="submit" />
+        <script>
+            $('#bdroom-security-on').click(function() {
+                $.post('/bdroom-security-on')
+            });
+        </script>
+        <input class="btn" name="bdroom-security-off" id="bdroom-security-off" value="Выключить сигнализацию в спальне" type="submit" />
+        <script>
+            $('#bdroom-security-off').click(function() {
+                $.post('/bdroom-security-off')
+            });
+        </script>
+        <input class="btn" name="bdroom-window-open" id="bdroom-window-open" value="Открыть шторы в спальне" type="submit" />
+        <script>
+            $('#bdroom-window-open').click(function() {
+                $.post('/bdroom-window-open')
+            });
+        </script>
+        <input class="btn" name="bdroom-window-close" id="bdroom-window-close" value="Закрыть шторы в спальне" type="submit" />
+        <script>
+            $('#bdroom-window-close').click(function() {
+                $.post('/bdroom-window-close')
+            });
+        </script>
+
+        <form id='main-go' method="POST" action="/main-go">
+            <input type="submit" class='btn' value="На главную" />
+        </form>
+    </div>
+</body>
+
+</html>
