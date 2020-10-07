@@ -8,3 +8,4 @@
 - Серверную часть приложения (NodeJS + Express)
 
 [Дополнительные материал к проекту](https://drive.google.com/drive/folders/1b16LURKgPbDulz2QmP2OTku3KCdISpPP?usp=sharing)
+[Страница web приложения](https://myiotproject-277811.ew.r.appspot.com/)
